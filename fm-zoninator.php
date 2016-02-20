@@ -44,15 +44,14 @@ define( 'FM_ZONINATOR_URL', plugin_dir_url( __FILE__ ) );
 if ( ! defined( 'ABSPATH' ) ) {
 	wp_die( esc_html__( 'This file cannot be accessed directly', 'fm-zoninator' ) );
 }
+
+/**
+ * Load context class file.
+ */
 function fm_zoninator_setup_files() {
 	if ( ! defined( 'FM_VERSION' ) ) {
 		return;
 	}
-	/**
-	 * Spin up the hyperdrive...
-	 *
-	 * Just kidding, load in singleton base class.
-	 */
 	require_once( FM_ZONINATOR_PATH . 'php/context/class-fieldmanager-context-zoninator.php' );
 }
 add_action( 'after_setup_theme', 'fm_zoninator_setup_files' );
