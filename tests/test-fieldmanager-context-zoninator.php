@@ -100,7 +100,7 @@ class Test_Fieldmanager_Context_Zoninator extends WP_UnitTestCase {
 		$base = $this->_get_elements();
 		$zone_flag = 'zone-post-' . $this->post->ID;
 		ob_start();
-		add_zoninator_post_form( 'test meta box', 'post', $base )->zone_post_info( $this->post, array() );
+		fm_add_zoninator_post_form( 'test meta box', 'post', $base )->zone_post_info( $this->post, array() );
 		$str = ob_get_clean();
 		// we can't really care about the structure of the HTML, but we can make sure that all fields are here
 		$this->assertRegExp( '/<input[^>]+type="hidden"[^>]+name="fieldmanager-base_group-nonce"/', $str );
@@ -115,7 +115,7 @@ class Test_Fieldmanager_Context_Zoninator extends WP_UnitTestCase {
 		$base = $this->_get_elements();
 		$test_data = $this->_get_valid_test_data();
 
-		add_zoninator_post_form( 'test meta box', 'post', $base )->save_to_post_meta( $this->post->ID, $test_data['base_group'] );
+		fm_add_zoninator_post_form( 'test meta box', 'post', $base )->save_to_post_meta( $this->post->ID, $test_data['base_group'] );
 
 		$saved_value = get_post_meta( $this->post->ID, 'base_group', true );
 		$saved_index = get_post_meta( $this->post->ID, '_test_index', TRUE );
@@ -135,7 +135,7 @@ class Test_Fieldmanager_Context_Zoninator extends WP_UnitTestCase {
 
 	public function test_programmatic_save_posts() {
 		$base = $this->_get_elements();
-		add_zoninator_post_form( 'test meta box', 'post', $base );
+		fm_add_zoninator_post_form( 'test meta box', 'post', $base );
 
 		$post_id = wp_insert_post( array( 'post_type' => 'post', 'post_name' => 'test-post', 'post_title' => 'Test Post', 'post_date' => '2012-10-25 12:34:56' ) );
 		wp_update_post( array( 'ID' => $post_id, 'post_content' => 'Lorem ipsum dolor sit amet.' ) );
