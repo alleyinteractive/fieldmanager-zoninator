@@ -15,6 +15,7 @@ $fm = new Fieldmanager_Group( array(
 		'b' => new Fieldmanager_Textfield( 'Field B' ),
 	)
 ) );
-// Note the same signature as the ->add_meta_box() etc. methods for FM objects, except that you pass the $fm object as the final argument.
+// Note the same signature as the ->add_meta_box() etc. methods for FM objects, 
+// except that you pass the $fm object as the final argument.
 add_zoninator_post_form( 'My Fields', array( 'post' ), $fm );
 ```
