@@ -17,5 +17,5 @@ $fm = new Fieldmanager_Group( array(
 ) );
 // Note the same signature as the ->add_meta_box() etc. methods for FM objects, 
 // except that you pass the $fm object as the final argument.
-add_zoninator_post_form( 'My Fields', array( 'post' ), $fm );
+fm_add_zoninator_post_form( 'My Fields', array( 'post' ), $fm );
 ```

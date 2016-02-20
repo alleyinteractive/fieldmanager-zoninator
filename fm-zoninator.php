@@ -62,6 +62,6 @@ add_action( 'after_setup_theme', 'fm_zoninator_setup_files' );
  * @param string $label
  * @param string|string[] $post_types
  */
-function add_zoninator_post_form( $label, $post_types, $field ) {
+function fm_add_zoninator_post_form( $label, $post_types, $field ) {
 	return new Fieldmanager_Context_Zoninator( $label, $post_types, $field );
 }
