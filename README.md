@@ -1,2 +1,4 @@
-# fieldmanager-zoninator
+# Fieldmanager for Zoninator
 Zoninator-specific extensions for Fieldmanager
+
+
