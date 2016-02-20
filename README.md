@@ -7,7 +7,8 @@ Zoninator-specific extensions for Fieldmanager
 
 This plugin provides an addition context for Fieldmanager allowing you to add your fields and groups to the draggable items in Zoninator's administration page, along with an AJAX-based update button to edit them in situ. To use, enable this plugin (and Fieldmanager), and do:
 
-```$fm = new Fieldmanager_Group( array(
+```
+$fm = new Fieldmanager_Group( array(
 	'name' => 'My Fields',
 	'children' => array(
 		'a' => new Fieldmanager_Textfield( 'Field A' ),
